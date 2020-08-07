@@ -12,7 +12,7 @@ Nudged default: Passwordless login by Authenticator "Push Login"
 
 
 
-<img src="https://support.yubico.com/helpdesk/attachments/2015007595869" align="left" style="zoom:25%;" />
+<img align="left" src="https://support.yubico.com/helpdesk/attachments/2015007595869" style="zoom:30%;" />
 
 
 
@@ -91,6 +91,25 @@ Using a <u>YubiKey (5+) or Security Key is a Passwordless option that is **avail
 
 We have been using physical keys to open our homes for decades, but in the digital world it has been "something you know" in stead of "something you have". I think the transition to something physical (can also be on your phone) can solve the problem of authentication or at least make the interaction more pleasant and costing less effort while being more secure. 
 
-> *"If the key only works on 95% of the services-contactpoints, it is not a replacement of a password."*
+> *"If the key only works on 90% of the services-contactpoints, it is not a replacement of a password."*
 
-The tricky part will be the last 5%. If the key only works on 95% of the services-contactpoints, it is not a replacement of a password, it is a contextual available alternative path... meaning that it works most of the times, but not always, resulting in user frustration. Furthermore, you just added complexity by needing the user to remember two different authentication methods. 
+The tricky part will be the last 10%. <u>If the key only works on 90% of the service-contactpoints, **it is not a replacement of a password**</u>, it is a contextual available alternative path... meaning that it works most of the times, but not always, resulting in user frustration. Furthermore, you just added complexity by needing the user to remember three different authentication methods. 
+
+#### Current status quo
+
+That being said, if you (or your users) can get passed one-time mandatory password setups, one could balance Passwordless logins between the Authenticator app and the Security Key as long as mobile platforms (or apps) do not support FIDO2 yet (timestamped, 8th of August 2020). 
+
+The table helps me identify those must-enter-password dialogs and keep an eye on the progress of FIDO2/Security key support. I could not find this information elsewhere.
+
+#### Future
+
+Now I can ask my serviceproviders and suppliers what is exactly blocking a certain row. It makes it far easier to refer to a page and row and ask what the blocking (upstream) issue is.
+
+
+
+•••
+
+
+
+Joeri • Juramento
+
