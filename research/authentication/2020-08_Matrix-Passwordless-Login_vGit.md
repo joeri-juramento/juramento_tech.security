@@ -12,6 +12,8 @@ Nudged default: Passwordless login by Authenticator "Push Login"
 
 ![Picture of Yubico's Blue Security Key](https://www.yubico.com/wp-content/uploads/2019/10/security_key_series_web_op.png)
 
+*Image: Yubico's Security Key + Security Key NFC*
+
 
 
 Testcase OK means: *"User can login with Security Key without needing the password."*
