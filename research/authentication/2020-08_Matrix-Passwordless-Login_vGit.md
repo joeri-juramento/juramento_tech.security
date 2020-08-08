@@ -113,7 +113,7 @@ The table helps me identify those must-enter-password dialogs and keep an eye on
 
 #### Future
 
-Now I can ask my serviceproviders and suppliers what is exactly blocking a certain row. It makes it far easier to refer to a page and row and ask what the blocking (upstream) issue is.
+Now I can ask my service-providers and suppliers what exactly is blocking a certain row and have a better overview. It makes it far easier to refer to a page and row and ask what the blocking (upstream) issue is. Do you have new information? You can start an issue at the [source](https://go.juramento.nl/source-Matrix-Passwordless-Login) of this page.
 
 
 
