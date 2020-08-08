@@ -71,7 +71,7 @@ Notice that Passwordless login is most of the time is equivalent to not needing 
 
 Paragraphs have been made <u>**skim-compatible** 🤓, read headers and underlined part to get the **gist**</u>.
 
-
+The table helps me identify those must-enter-password dialogs and keep an eye on the progress of FIDO2/Security key support. I could not find this information elsewhere.
 
 ### Cause of Quest
 
