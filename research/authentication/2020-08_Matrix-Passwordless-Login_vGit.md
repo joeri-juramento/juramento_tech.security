@@ -126,7 +126,11 @@ So how to mitigate that sub-optimal direction? Well, [YubiKey Bio](https://www.y
 
 For now, let's just wait for this product to hit the market at an acceptable price-point. For your information, there might be other (fingerprint) vendors out there, I simply only have had experience with Yubico. - I just wanted to mention a technology that could overcome the PIN-requirement and still be FIDO2 Passwordless compatible and safe.
 
-#### Future
+![yubikey-bio](https://www.yubico.com/wp-content/uploads/2019/11/biokey-3-keychain-450x300.jpg)
+
+
+
+### Future
 
 Now I can ask my service-providers and suppliers what exactly is blocking a certain row and have a better overview. It makes it far easier to refer to a page and row and ask what the blocking (upstream) issue is. Do you have new information? You can start an issue at the [source](https://go.juramento.nl/source-Matrix-Passwordless-Login) of this page.
 
@@ -140,5 +144,5 @@ Joeri • Juramento
 
 
 
- 
+ ![end-picture](https://miro.medium.com/max/4032/1*Qg1nuku84TjLxxkcBbeS7A.png)
 
