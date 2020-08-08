@@ -126,7 +126,7 @@ We go trough all this trouble of replacing passwords (and usernames) for a physi
 
 So how to mitigate that sub-optimal direction? Well, [YubiKey Bio](https://www.yubico.com/blog/yubico-reveals-first-biometric-yubikey-at-microsoft-ignite/) which is on the horizon <u>might also overcome this PIN-requirement by replacing it with a **built-in fingerprint-reader**</u>. Hopefully the bio-sensor can also be powered via NFC so our functional desire to authenticate on a mobile device can also be answered.
 
-For now, let's just wait for this product to hit the market at an acceptable price-point. For your information, there might be other (fingerprint) vendors out there, I simply only have had experience with Yubico. - I just wanted to mention a technology that could overcome the PIN-requirement and still be FIDO2 Passwordless compatible and safe.
+For now, let's just wait for this product to hit the market at an acceptable price-point. For your information, there might be other (fingerprint) vendors out there, I simply only have had experience with Yubico. - I just wanted to mention a technology that could surpass the PIN-requirement and still be FIDO2 Passwordless compatible and safe.
 
 ![yubikey-bio](https://www.yubico.com/wp-content/uploads/2019/11/biokey-3-keychain-450x300.jpg)
 
