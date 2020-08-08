@@ -50,7 +50,7 @@ OK = Okay. NOK = Not okay. RT = Re-test, re-verify.
 | Mac (standalone)     | OK🟡PIV NOK🔴 FIDO2 |             Default | Impossible              | FIDO2: Unknown Yubikey PIV:OK | Login Mac, smartcard, requires cert PINcode | 2020 July |
 | Mac (AzAD)           |         ?         |                     |                         |                               |                                             |           |
 
-PIV refers to Yubikey 'app-portion' of SmartCards, only available on the Yubico's Yubikey 5+ not Yubico's Security keys.
+PIV refers to Yubikey 'app-portion' of SmartCards, only available on the Yubico's Yubikey 5+ not Yubico's blue Security keys.
 
 ### Itty bitty details
 
@@ -65,25 +65,25 @@ Notice that Passwordless login is most of the time is equivalent to not needing 
 
 
 
-### If you need more background information...
+## Background information | Why this table?
 
-Paragraphs have been made **skim-compatible** 🤓
+Paragraphs have been made <u>**skim-compatible** 🤓, read headers and underlined part to get the **gist**</u>.
 
 #### Cause of Quest
 
-I have been a Yubikey user for some time, but the FIDO2 support was added in the later models. I started this 'quest' to experience and test the benefit of Passwordless logon, but also for my parents because they are becoming of age and <u>passwords, pins and secrets are **overwhelming**</u> them. Additionally more users around me could benefit from Passwordless login because that are simply not a fan of remembering passwords.
+I have been a Yubikey user for some time, but the FIDO2 support was added in the later models. I started this 'quest' to experience and test the benefit of Passwordless logon, but also for my parents because they are becoming of age and <u>passwords, pins and secrets are **overwhelming**</u> them. Additionally more users around me could benefit from Passwordless login because that are simply not a fan (or capable) of remembering passwords.
 
 Personally I have been getting by with a **Password-vault**, but managing such a vault is not for everyone. I have observed <u>**users struggling** because of application complexity or human-error</u> by not being precise. 
 
 #### Bandaid Design
 
-Though very potentially very useful, a password manager or vault is a bandaid design solution to the negative cascade effect of the world of Passwords. Passwords try to solve the problem of secure authentication / identification. If you are reading this you know that <u>passwords are not solving that problem most elegantly</u> but historically it makes total sense we (humans) started there. 
+Though very potentially very useful, a password manager or vault is a bandaid design solution to the negative cascade effect of the world of Passwords. Passwords try to solve the problem of secure authentication / identification. If you are reading this you know that <u>passwords are not solving that problem most elegantly</u> even though historically it makes total sense we (humans) started there. 
 
-I think Passwordless (or Credential-less) logons are the next generation of authentication where there is no (encrypted) shared secret between client-user and server like a password. I recognise Steve Gibon's SQRL technology and <u>Yubico's & Microsoft's **FIDO2** integration as such next-generation technologies</u>. This article focuses on SecurityKey authentication.
+I think Passwordless (or Credential-less) logons are the next generation of authentication where there is no (encrypted) shared secret between client-user and server like a password (which can be stolen, re-used, shared etc). I recognise Steve Gibson's SQRL technology and <u>Yubico's & Microsoft's **FIDO2** integration as such next-generation technologies</u>. This article focuses on SecurityKey authentication.
 
 #### Today
 
-Using a <u>YubiKey (5+) or Security Key is a Passwordless option that is **available today**</u>, though, as you might have surmised from this article – referencing the big table – <u>it is not integrated yet as seamless as one would desire</u>, but hopefully support will continue to grow. At the moment, one cannot give the user a serviced Yubikey, without sharing the account password because the Yubikey-authentication is not supported on every contact-point in the Microsoft services world. <u>The **Password remains mandatory** in some situations.</u>
+Using a <u>YubiKey (5+) or Security Key is a Passwordless option that is **available today**</u>, though, as you might have surmised from this article – referencing the big table – <u>it is not integrated yet as seamless as one would desire</u>, but hopefully support will continue to grow. At the moment, one cannot give the user a serviced Yubikey, without sharing the account password because the Yubikey-authentication is not supported on every contact-point in the Microsoft services world. <u>The **Password remains mandatory** in some situations.</u> (Timestamped statement 8th of August, 2020)
 
 #### Transition
 
@@ -110,4 +110,8 @@ Now I can ask my serviceproviders and suppliers what is exactly blocking a certa
 
 
 Joeri • Juramento
+
+
+
+ 
 
