@@ -35,7 +35,7 @@ Testcase OK means: *"User can login with Security Key without needing the passwo
 | Outlook for Android        |    RT    |         Impossible | Default    | ?                  | Adding or re-auth account                      |           |
 | Authenticator  (MS) iOS    |  NOK 🔴   | Mandatory 1st time | Default    | Impossible         | Adding account MSA ID                          | 2020 July |
 | Authenticator (MS) Android | NOK 🔴 RT | Mandatory 1st time | Possible   | Impossible         | Adding account MSA ID                          | --        |
-| Mail app iOS               | NOK 🔴 RT |  Auth app required | Default    | Impossible         | Exchange / Outlook integration.                | 2020 July |
+| Mail app iOS               | NOK 🔴 RT |                 RT | Default    | Impossible         | Exchange / Outlook integration.                | 2020 July |
 |                            |          |                    |            |                    |                                                |           |
 |                            |          |                    |            |                    |                                                |           |
 |                            |          |                    |            |                    |                                                |           |
