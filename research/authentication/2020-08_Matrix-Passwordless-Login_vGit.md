@@ -8,11 +8,9 @@ This table show the compatibility of several Microsoft services among several pl
 
 Set-up default: Login with Username & Password.
 Nudged default: Passwordless login by Authenticator "Push Login" 
-**Desired default: Passwordless login by Security Key NFC (or Yubikey 5+) "FIDO2"**
+**Desired default: Passwordless login by Security Key NFC (or YubiKey 5+) "FIDO2"**
 
-
-
-<img align="left" src="https://support.yubico.com/helpdesk/attachments/2015007595869" style="zoom:30%;" />
+![Picture of Yubico's Blue Security Key](https://www.yubico.com/wp-content/uploads/2019/10/security_key_series_web_op.png)
 
 
 
