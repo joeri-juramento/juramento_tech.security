@@ -109,9 +109,22 @@ In this screenshot the Security Key option is presented as a *depended alternati
 * fill-out their e-mail, hit enter and be confronted with a password prompt or push prompt. Completely skipping or missing the FIDO2 logon.
 * fill-out their be-mail before clicking *"Sign in with security key"*. But filling out the e-mail is not required for the Security Key. The complete identity is on the Security Key! 
 
-We are not required to fill out anything here, which is why this design has these undesirable consequences. The logon experience must be updated to improve the experience, but this is what we have got to work with today. I need to mention it, because technical support and integration is not the only thing that has to be overcome.
+We are not required to fill out anything here, which is why this design has these undesirable consequences. The logon experience must be updated to improve the experience, but this is what we have got to work with today. I need to mention it, because technical support and integration is not the only thing that has to be overcome. High quality, well-designed interactions and screens should not be taken lightly as I predict a direct link to adoptability.
 
-The table helps me identify those must-enter-password dialogs and keep an eye on the progress of FIDO2/Security key support. I could not find this information elsewhere.
+##### Remnants of the Password
+
+Currently <u>Security Keys that support FIDO2 require a **PIN**</u> (which is required by the spec if I remember correctly). So the user is not completely off the hook for needing to remember something, however, the complexity is lower than a 25-digit password, because the PIN is used for non-brute-forceable authentication from the physical user to the physical device so that the linked digital device can authenticate the (digital) user to a service-provider. I want to have mentioned the user experience or usability of this so-called "chain of authentication"[^grc-pin-auth] and its implications, because <u>unfortunately the devil's advocate might argue oversimplified[^simply] that **we just moved the password instead of replacing it**.</u>
+
+[^grc-pin-auth]: Thanks to Steve Gibson's Security Now Podcast for educating me about authentication. His explanation of SQRL and authenticating towards the SQRL application inspired this phrasing.
+[^simply]: 'oversimplifiedly' right? I simply didn't want people to trip over the words as I did. - In any case, to de-simplify: one also requires to have possession of the key and connect the key and touch the key, so there is more going then replacing a password with a PIN.
+
+We go trough all this trouble of replacing passwords (and usernames) for a physical key which has great security improvements but a PIN of 6 to 10 characters can also become an usability issue (for some). Just try to scale it and add time.  A potential future with 3 Security Keys per user with each a different PIN? 
+
+##### A Fingerprint Touch
+
+So how to mitigate that sub-optimal direction? Well, [YubiKey Bio](https://www.yubico.com/blog/yubico-reveals-first-biometric-yubikey-at-microsoft-ignite/) which is on the horizon <u>might also overcome this PIN-requirement by replacing it with a **built-in fingerprint-reader**</u>. Hopefully the bio-sensor can also be powered via NFC so our functional desire to authenticate on a mobile device can also be answered.
+
+For now, let's just wait for this product to hit the market at an acceptable price-point. For your information, there might be other (fingerprint) vendors out there, I simply only have had experience with Yubico. - I just wanted to mention a technology that could overcome the PIN-requirement and still be FIDO2 Passwordless compatible and safe.
 
 #### Future
 
