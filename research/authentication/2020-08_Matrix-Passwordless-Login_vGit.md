@@ -95,7 +95,19 @@ The tricky part will be the last 10%. <u>If the key only works on 90% of the ser
 
 #### Current status quo
 
-That being said, if you (or your users) can get passed one-time mandatory password setups, one could balance Passwordless logins between the Authenticator app and the Security Key as long as mobile platforms (or apps) do not support FIDO2 yet (timestamped, 8th of August 2020). 
+That being said, if you (or your users) can get passed the one-time mandatory password setups, <u>one could balance Passwordless logins **between the Authenticator app and the Security Key** as long as mobile platforms[^or-other] do not support FIDO2[^CTAP] yet</u> (timestamped, 8th of August 2020). Additionally, on platforms where the Security Key logon is supported, please take note that <u>the Security Key logon option is **not presented as the default or an equal alternative** in the graphical user interface</u> and if the user is not educated or informed, the user will type in their e-mail address and go the authenticator push-route in stead of the FIDO2 Security Key route which requires them clicking on an alternative button below the e-mail address field. Take a look:
+
+[^or-other]: Or an application or a package or server support or service-provider-support or whatever in the chain that needs to be aligned for FIDO2 keys to work on mobile devices.  ↩
+[^ctap]: Apparently there is CTAP version 1.1 and 2.0; the last one is required for Passwordless login. I might add more information, at the moment my mental model of FIDO2 and the relation to CTAP2.0 is not complete. I learned about these trying to figure out why Security Key logon on Mac in Firefox and Safari is not working, but Brave, Edge for Mac are supporting the Security Key. It is still a bit confusing to me to be honest.  https://bugzilla.mozilla.org/show_bug.cgi?id=1530370
+
+![ms-logon-securitykey-button-marked](ms-logon-securitykey-button-marked.png)
+
+In this screenshot the Security Key option is presented as a *depended alternative path*, meaning the lay-out / design of the screen may cause the user to:
+
+* fill-out their e-mail, hit enter and be confronted with a password prompt or push prompt. Completely skipping or missing the FIDO2 logon.
+* fill-out their be-mail before clicking *"Sign in with security key"*. But filling out the e-mail is not required for the Security Key. The complete identity is on the Security Key! 
+
+We are not required to fill out anything here, which is why this design has these undesirable consequences. The logon experience must be updated to improve the experience, but this is what we have got to work with today. I need to mention it, because technical support and integration is not the only thing that has to be overcome.
 
 The table helps me identify those must-enter-password dialogs and keep an eye on the progress of FIDO2/Security key support. I could not find this information elsewhere.
 
