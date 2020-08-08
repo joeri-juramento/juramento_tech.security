@@ -71,9 +71,11 @@ Notice that Passwordless login is most of the time is equivalent to not needing 
 
 Paragraphs have been made <u>**skim-compatible** 🤓, read headers and underlined part to get the **gist**</u>.
 
-#### Cause of Quest
 
-I have been a Yubikey user for some time, but the FIDO2 support was added in the later models. I started this 'quest' to experience and test the benefit of Passwordless logon, but also for my parents because they are becoming of age and <u>passwords, pins and secrets are **overwhelming**</u> them. Additionally more users around me could benefit from Passwordless login because that are simply not a fan (or capable) of remembering passwords.
+
+### Cause of Quest
+
+I have been a YubiKey user for some time, but the FIDO2 support was added in the later models. I started this 'quest' to experience and test the benefit of Passwordless logon, but also for my parents because they are becoming of age and <u>passwords, pins and secrets are **overwhelming**</u> them. Additionally more users around me could benefit from Passwordless login because that are simply not a fan (or capable) of remembering passwords.
 
 Personally I have been getting by with a **Password-vault**, but managing such a vault is not for everyone. I have observed <u>**users struggling** because of application complexity or human-error</u> by not being precise. 
 
@@ -81,9 +83,9 @@ Personally I have been getting by with a **Password-vault**, but managing such a
 
 Though very potentially very useful, a password manager or vault is a bandaid design solution to the negative cascade effect of the world of Passwords. Passwords try to solve the problem of secure authentication / identification. If you are reading this you know that <u>passwords are not solving that problem most elegantly</u> even though historically it makes total sense we (humans) started there. 
 
-I think Passwordless (or Credential-less) logons are the next generation of authentication where there is no (encrypted) shared secret between client-user and server like a password (which can be stolen, re-used, shared etc). I recognise Steve Gibson's SQRL technology and <u>Yubico's & Microsoft's **FIDO2** integration as such next-generation technologies</u>. This article focuses on SecurityKey authentication.
+I think Passwordless (or Credential-less) logons are the next generation of authentication where there is no (encrypted) shared secret between client-user and server like a password (which can be stolen, re-used, shared etc). I recognise Steve Gibson's SQRL technology and <u>Yubico's & Microsoft's **FIDO2** integration as such next-generation technologies</u>. This article focuses on Security Key authentication.
 
-#### Today
+### Today
 
 Using a <u>YubiKey (5+) or Security Key is a Passwordless option that is **available today**</u>, though, as you might have surmised from this article – referencing the big table – <u>it is not integrated yet as seamless as one would desire</u>, but hopefully support will continue to grow. At the moment, one cannot give the user a serviced Yubikey, without sharing the account password because the Yubikey-authentication is not supported on every contact-point in the Microsoft services world. <u>The **Password remains mandatory** in some situations.</u> (Timestamped statement 8th of August, 2020)
 
@@ -91,16 +93,16 @@ Using a <u>YubiKey (5+) or Security Key is a Passwordless option that is **avail
 
 We have been using physical keys to open our homes for decades, but in the digital world it has been "something you know" in stead of "something you have". I think the transition to something physical (can also be on your phone) can solve the problem of authentication or at least make the interaction more pleasant and costing less effort while being more secure. 
 
-> *"If the key only works on 90% of the services-contactpoints, it is not a replacement of a password."*
+> *"If the key only works on 90% of the service-contact-points, it is not a replacement of a password."*
 
-The tricky part will be the last 10%. <u>If the key only works on 90% of the service-contactpoints, **it is not a replacement of a password**</u>, it is a contextual available alternative path... meaning that it works most of the times, but not always, resulting in user frustration. Furthermore, you just added complexity by needing the user to remember three different authentication methods. 
+The tricky part will be the last 10%. <u>If the key only works on 90% of the service-contact-points, **it is not a replacement of a password**</u>, it is a contextual available alternative path... meaning that it works most of the times, but not always, resulting in user frustration. Furthermore, you just added complexity by needing the user to remember three different authentication methods. 
 
 #### Current status quo
 
 That being said, if you (or your users) can get passed the one-time mandatory password setups, <u>one could balance Passwordless logins **between the Authenticator app and the Security Key** as long as mobile platforms[^or-other] do not support FIDO2[^CTAP] yet</u> (timestamped, 8th of August 2020). Additionally, on platforms where the Security Key logon is supported, please take note that <u>the Security Key logon option is **not presented as the default or an equal alternative** in the graphical user interface</u> and if the user is not educated or informed, the user will type in their e-mail address and go the authenticator push-route in stead of the FIDO2 Security Key route which requires them clicking on an alternative button below the e-mail address field. Take a look:
 
 [^or-other]: Or an application or a package or server support or service-provider-support or whatever in the chain that needs to be aligned for FIDO2 keys to work on mobile devices.  ↩
-[^ctap]: Apparently there is CTAP version 1.1 and 2.0; the last one is required for Passwordless login. I might add more information, at the moment my mental model of FIDO2 and the relation to CTAP2.0 is not complete. I learned about these trying to figure out why Security Key logon on Mac in Firefox and Safari is not working, but Brave, Edge for Mac are supporting the Security Key. It is still a bit confusing to me to be honest.  https://bugzilla.mozilla.org/show_bug.cgi?id=1530370
+[^ctap]: Apparently there is CTAP version 1.1 and 2.0; the last one is required for Passwordless login. I might add more information, at the moment my mental model of FIDO2 and the relation to CTAP2.0 is not complete. I learned about these trying to figure out why Security Key logon on Mac in Firefox and Safari is not working, but Brave, Edge for Mac are supporting the Security Key. It is still a bit confusing to me to be honest. Check it out here:  https://bugzilla.mozilla.org/show_bug.cgi?id=1530370
 
 ![ms-logon-securitykey-button-marked](ms-logon-securitykey-button-marked.png)
 
@@ -109,7 +111,7 @@ In this screenshot the Security Key option is presented as a *depended alternati
 * fill-out their e-mail, hit enter and be confronted with a password prompt or push prompt. Completely skipping or missing the FIDO2 logon.
 * fill-out their be-mail before clicking *"Sign in with security key"*. But filling out the e-mail is not required for the Security Key. The complete identity is on the Security Key! 
 
-We are not required to fill out anything here, which is why this design has these undesirable consequences. The logon experience must be updated to improve the experience, but this is what we have got to work with today. I need to mention it, because technical support and integration is not the only thing that has to be overcome. High quality, well-designed interactions and screens should not be taken lightly as I predict a direct link to adoptability.
+We are not required to fill out anything here, which is why this screen-design might steer the user the wrong way. **<u>The key logon experience must be updated** to improve the experience, but this is what we have got to work with today</u>. I need to mention it, because technical support and integration is not the only thing that has to be overcome. High quality, well-designed interactions and screens should not be taken lightly as I predict a direct link to adoptability.
 
 ##### Remnants of the Password
 
@@ -132,7 +134,9 @@ For now, let's just wait for this product to hit the market at an acceptable pri
 
 ### Future
 
-Now I can ask my service-providers and suppliers what exactly is blocking a certain row and have a better overview. It makes it far easier to refer to a page and row and ask what the blocking (upstream) issue is. Do you have new information? You can start an issue at the [source](https://go.juramento.nl/source-Matrix-Passwordless-Login) of this page.
+Now I can ask my service-providers and suppliers what exactly is blocking a certain row and have a better overview. It makes it far easier to refer to a page and row and ask what the blocking (upstream) issue is.
+
+Do you have new information? I like to you hear from you. You can start an issue at the [source](https://go.juramento.nl/source-Matrix-Passwordless-Login) of this page.
 
 
 
