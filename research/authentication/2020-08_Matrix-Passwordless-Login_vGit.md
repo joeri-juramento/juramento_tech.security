@@ -150,3 +150,7 @@ Joeri • Juramento
 
  ![end-picture](https://miro.medium.com/max/4032/1*Qg1nuku84TjLxxkcBbeS7A.png)
 
+The current url visible in your address bar might change, here is a permalink I can update in case of hosting or dns changes:
+Permanent URL: https://go.juramento.nl/article-Passwordless 
+
+<!--eof-->
