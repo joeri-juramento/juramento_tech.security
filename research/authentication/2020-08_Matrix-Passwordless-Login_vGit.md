@@ -30,7 +30,8 @@ Testcase OK means: *"User can login with Security Key without needing the passwo
 | OneDrive on Mac            |  NOK 🔴   |          Mandatory | Impossible | Impossible         | Login OneDrive app                             | 2020 July |
 | Outlook for Mac            |    RT    |                    |            |                    |                                                |           |
 | Outlook Windows            |    RT    |                    |            |                    |                                                |           |
-| Mail & Calendar app        |    RT    |                    |            |                    | Add account in Win 10 App,  "this app only".   |           |
+| Mail & Calendar app Win10  |    RT    |                    |            |                    | Add account in Win 10 App,  "this app only".   |           |
+| Mail, Calendar   Mac       |  NOK 🔴   |          Surpassed | Default    | Impossible         | Exchange in native Mac apps. Add / re-auth.    | 2020 Aug  |
 | Outlook for iOS            |  NOK 🔴   |         Impossible | Default    | Impossible         | Adding or re-auth account                      | 2020 July |
 | Outlook for Android        |    RT    |         Impossible | Default    | ?                  | Adding or re-auth account                      |           |
 | Authenticator  (MS) iOS    |  NOK 🔴   | Mandatory 1st time | Default    | Impossible         | Adding account MSA ID                          | 2020 July |
