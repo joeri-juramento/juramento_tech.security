@@ -10,7 +10,7 @@ Set-up default: Login with Username & Password.
 Nudged default: Passwordless login by Authenticator "Push Login" 
 **Desired default: Passwordless login by Security Key NFC (or YubiKey 5+) "FIDO2"**
 
-![Picture of Yubico's Blue Security Key](https://www.yubico.com/wp-content/uploads/2019/10/security_key_series_web_op.png)
+![Picture of Yubico's Blue Security Key](https://media.juramento.nl/site/img/security_key_series_web_op_250px.png)
 
 *Image: Yubico's Security Key + Security Key NFC*
 
@@ -59,14 +59,6 @@ PIV refers to Yubikey 'app-portion' of SmartCards, only available on the Yubico'
 
 Notice that Passwordless login is most of the time is equivalent to not needing to type in password nor the username! Imagine the effort and errors saved if people don't have to type in their password or their username.
 (Power users might need to pick a username from a list in case of multiple identities.)
-
-
-
-
-
-![Picture of Security Key NFC and Phone](https://www.yubico.com/wp-content/uploads/2019/01/sky-3-img-2.png)
-
-
 
 ## Background information | Why this table?
 
@@ -129,9 +121,10 @@ So how to mitigate that sub-optimal direction? Well, [YubiKey Bio](https://www.y
 
 For now, let's just wait for this product to hit the market at an acceptable price-point. For your information, there might be other (fingerprint) vendors out there, I simply only have had experience with Yubico. - I just wanted to mention a technology that could surpass the PIN-requirement and still be FIDO2 Passwordless compatible and safe.
 
-![yubikey-bio](https://www.yubico.com/wp-content/uploads/2019/11/biokey-3-keychain-450x300.jpg)
+![yubikey-bio](https://media.juramento.nl/site/img/yubikey-biometric-preview.jpg)
+(Picture came from [Yubico](https://www.yubico.com/blog/getting-a-biometric-security-key-right/))
 
-
+[Latests YubiKey Bio updates](https://www.yubico.com/blog/tag/yubikey-bio/)
 
 ### Future
 
