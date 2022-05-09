@@ -1,16 +1,12 @@
 # The Pain Towards Password-less*
 
-## Writing towards a User Centered Perspective
-
-As an early adaptor I often explore new technologies and services, usually because they serve a problem, occasionally because of curiosity. I prick incentive by observing users with different backgrounds interact with these technologies and try to aid them in setting up a good solution for them. 
-
-Passwords... have always been a challenge. For the IT professional, as well as your aunt. I've never met anyone who didn't struggle with this. Even experts  using the newest technologies can still get themselves in a bind.
+Passwords... they have always been a challenge. For the IT professional, as well as your aunt. I've never met anyone who didn't struggle with this. Even experts using the newest technologies can still get themselves in a bind. - This article shows how new technically-impressive solutions still can have suboptimal outcomes for the end-users. 
 
 ### Ever experienced issues with passwords?
 
 The following graph demonstrates such a loop and is a simple preview for the rest of the article:
 
-1. Like many users, soon or later you will have top many password to remember.
+1. Like many users, soon or later you will have too many password to remember.
 1. The chaos will have negative side effects.
 1. Organisation can be achieved in different ways, among them, by use of a Password Vault.
 1. An techy or even Organisation might enforce Passwordless Security Keys for their users.
