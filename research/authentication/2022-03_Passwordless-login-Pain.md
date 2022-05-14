@@ -1,4 +1,4 @@
-# The Pain Towards Password-less*
+# The Pain Towards Passwordless*
 
 Passwords... they have always been a challenge. For the IT professional, as well as your aunt. I've never met anyone who didn't struggle with this. Even experts using the newest technologies can still get themselves in a bind. - This article shows how new technically-impressive solutions still can have suboptimal outcomes for the end-users. 
 
@@ -36,9 +36,7 @@ graph TD
 ### Now, different coop-mechanism :
 
 1. They reuse passwords
-2. They write down passwords
-   1. In Excel, Word
-   2. Post-its
+2. They write down passwords (In Excel, Word, Post-its)
 3. Use dates and other information that is not secret.
 3. Use of unprotected password managers.
 4. Use of password vaults.
@@ -455,9 +453,9 @@ Users struggle with typing in long complicated passwords, however PINs are not a
 🎯 A workable, scalable alternative to passwords also needs to make progress in the user/interaction realm. Great that it increases security; but it better also increase usability. It also shouldn't be harder to use over time.
 
 
-## Circling back to the price (effort)
+## The Effort
 
-Now Microsoft has launched passwordless login a while ago.
+Now Microsoft has launched (their implementation of) passwordless login a while ago.
 
 Here are some counter-intuitive experiences.
 
@@ -465,7 +463,7 @@ Here are some counter-intuitive experiences.
 
 Please all count to 10 and exhale...😤
 
-- So the whole onboarding procedure to Passwordless*, requires passwords.
+- **So the whole onboarding procedure to Passwordless, requires passwords.**
 
 - And if you change your password, you will break the Authenticator App's ability to help you sign-in without a password. You'll need to activate it again.
 
@@ -473,7 +471,11 @@ Please all count to 10 and exhale...😤
 
 The Security Key route, which has different form factors like a Kensington fingerprint-scanner or a YubiKey, is a semi-replacement of the password, but, in order to onboard or activate it, you need a password. In theory I could send a prepped YubiKey to the user but that would I also need to set the PIN and how do I securely share this PIN with the user? 
 
-The experience for the user with a Kensington fingerprint-scanner seems wonderful. Until they need the fall-back PIN, but the number of extreme happy flows seems wonderful before that happens can be impressive. However, when the system gets into a locked state somehow, requiring that fall-back PIN, we can only hope users can access the vault where the PIN is stored via their phone and not on their laptop or desktop.
+👉 The experience for the user with a (Kensington) fingerprint-scanner seems wonderful, until they need the fall-back PIN.
+
+The number of extreme happy usages before fall-back PIN is required, can be extensive. However, when the system gets into a locked state somehow, requiring that fall-back PIN, we can only hope users can access the vault where the PIN is stored if they don't remember it.
+
+👉 If the fall-back PIN is used rarely, that’s great, because that means that the primary authentication to the device is working; however, it also means the user used the PIN less often and is MORE likely to have forgotten it.
 
 
 ## Wrap up
@@ -482,7 +484,11 @@ So these Security Keys with their PINs are not the holy grail in their current i
 
 The benefits melt away simply by adding reality.
 
-Two topics exist I would like to discuss next time. The Authenticator app and comparing same-device auth versus multi-device auth and my observations with end-users. Next I might roll into expressing some design scenario's on what would be a better fit as an alternative to passwords. The current options seem technology-driven and we should probably take our hats off to its authors, but I want more! I want us to find that bliss point between technology, security and human user-friendly interaction.
+### Future
+
+Two topics exist I would like to discuss in the future. The Authenticator app and comparing same-device auth versus multi-device auth and my observations with end-users. 
+
+The current options seem technology-driven and we should probably take our hats off to its authors, but I want more! I want us to find that bliss point between technology, security and human user-friendly interaction.
 
 Until next time.
 
@@ -492,13 +498,125 @@ Until next time.
 
 Joeri • Juramento
 
+# Update
+
+Seems that the FIDO alliance is shifting their focus from the hardware-based Security Keys to a different strategy some call ‘Passkeys’ — an alias for FIDO Credentials — in   favour of better (expected) user adoption. It effectively turns a smartphone (or your laptop) into a Security Key, with extra cloud synchronisation and backup options.
+
+This future phone with FIDO credentials can authenticate to all kinds of accounts. So you would log into your webshop.example with help of your phone, in stead of a password. You would authenticate yourself to your phone and the phone would authenticate you to the website.
+
+Now let’s map the problem with Security Keys and their PINs to this new design see what is resolved and what isn’t.
+
+### 1. The Security Key’s (Fall-back) PIN
+
+A mobile phone as such has a secret as well, on an iPhone it’s called ‘Passcode’ to unlock your phone. If you enable Touch ID or Face ID, the Passcode becomes in a sense the fall-back PIN. You only need to enter it in certain contexts.
+
+🔸 I assume that the chance that users remember their phone PIN or passcode is higher than the fallback of their Kensington / Yubikey Bio’s fall-back PIN because the OS will prompt it more often (relatively).
+
+### 2. The dependency on the account’s Password. 
+
+🟢 Though Microsoft’s Authenticator passwordless app  breaks when you change the account’s password and you need it, to set it up, in theory, FIDO Credential exchange should be enough to set-up an account without the need for a main password. As it is a true replacement of a password, it should work completely independent of it. 
+
+It should be noted that a FIDO *Security Key* could in theory already realise that today, but I have not witnessed any of the major services offering account creation *without* a password, though outlook.live.com does offer you the option of disabling your password, including Google offers hardening in similar fashion. The difference is that these features are offered as hardening to upgrade your security whereas — from my perspective — FIDO Credentials alias ‘Passkeys’ also focus on Usability. To get away from passwords to a more user-friendly authentication form.
+
+### 3. Users might need to do more steps than with a password.
+
+Yes and no. It depends on the implementation. I am hoping less can go wrong. At the top I listed about 10 different struggles users have with passwords. It would be great it that was reduced to only 1. 
+
+Microsoft’s own Authenticator App passwordless implementation is experienced differently if you authenticate something on-device compared to authenticating across different devices. 
+
+Against expectations, I’ve witnessed users to have more problem with using the technology on the same device. 
+
+👉 When a user gets a notification on the phone while logging into his account on his computer. The notification set's the user almost perfectly for a normal walk though. (Provided they no where to find the notification if they are too slow.)
+
+However, when this notification comes by when a user logs in to an app on their phone or iOS' native Contact app, I've seen the following struggles:
+
+1. Users do **not see**/register the notification popping over their screen.
+2. Users are **too** **slow** to click it before the notification disappears.
+3. Users do **not know** where to find the notification after it has disappeared. 
+4. After navigating to the app manually, users do **not know** how to refresh the app if needed.
+5. Users work **too slow** and the sign-in the prompt has timed-out.
+6. Users finally answer the prompt successfully in time, but they **don't know** how to finish the authentication by navigation back to the account's settings screen or the relevant app.
+7. Users seem to **get disoriented** mid-flow and seem to forget what they were trying to accomplish and try start over, finding their app or setting in a weird state, **not knowing** how to get to reset it.
+8. Users seem to have **no complete understanding** of different windows/apps on their mobile phone and how to (quickly) navigate between them.
+9. Users **don't seem to understand** that App A signs-in App B, whereas they **DO understand** App A sign-ins Desktop App 1.
+10. When the app asks the user "to Touch-ID", they **press** the home button **too hard** interrupting the process.
+11. Users **cannot see or remember the number fast enough** before it is overlayed with new screen elements. 
+    (Microsoft's horrible implementation truly resulted in a 'Hide for 5 seconds' option to allow users to see the challenged number for this same-device issue. #bandaid-on-bandaid-on-bandaid.)
+
+Now if users experience the same difficulty with FIDO Credentials / 'Passkeys' as the list above, then back your bags and go home. 
+
+It has to be borderline seamless. 
+
+Why is the Microsofts Authenticator app - passwordless enabled - prompting users to enter numbers when it is on the SAME device. As long as the app is authorised, it should just continue on the user's command without challenges.
+
+**All these struggle are not the user's fault!**
+
+A. The system should not be that impatient.
+
+B. The system should be context-aware.
+
+C. The system should not need to rely on elaborate understanding by the user.
+
+D. The system should guide and inform the user what to do next (within reason).
+
+E. The system should not bother the user with stuff that can be automated.
+
+So struggle 3, 6, 7-reset relates to platform knowledge (C). **The solution should not assume nor require the users to have understanding of *app-switching, notification-centre, inner-notification-answers, force-quit, pull-to-refresh* as these operations can be unknown to the user.** They may facilitate alternate paths in your flow, but they should NOT be part of the regular basic course of events. If you do, you will probably lose users who cannot complete the flow. Or worse, you create a solution with a nightmare usability that people have to put up with every_single_time.
+
+Perhaps in a few decades, this requirement will no longer be valid, I am not sure.
+
+👉 The main argument is that your flow shouldn't rely on knowledge or information outside the screen or outside the active interaction between user and system.
+
+That is why the authentication across two devices works better. Users hear and see a prompt on their locked screen which just keeps waiting there untill they do something with it. They interact with it and are taken to the correct app, authenticate and it its done. — Simply a better experience than the current on-device authentication. (Microsoft Authenticator Passworless sign-in.)
+
+⁇🔸/🟢/🟥 - We'll have to wait and see how FIDO Credentials / Passkeys get implemented.
 
 
-All Rights Reserved - You may refer.
+
+# Worries
+
+### So the Phone's Passcode will protect more...
+
+If the iPhone's passcode or Touch ID become the secrets that protect the FIDO Passkeys credentials, then sharing one's phone amongst spouses or family has more consequences than before.
+
+I have spoken with users that know each other's phone's passcode. I also spoken with users that absolutely don't share their phone's passcodes it's a choice.
+
+Regardless, if this phone will protect other accounts, platform makers might offer to protect Passcodes with an additional - here we go again - PIN which the main user needs to remember again.
+
+--
+
+Imagine a phone with 30 FIDO Credentials of main user Bob. 5 Credentials are for work, 20 credentials are for personal resources and the remaining 5 are for an extension for our example because we should assume we are forgetting things.
+
+Bob's partner is Jim. If Jim knows Bob's phone's passcode, he has access to Bob's work's resources. He would need Bob's phone and the passcode, but I can see a company admin not being happy about this on principle.
+
+There are valid reasons for Bob and Jim to open each other's phone, but there are also valid reasons for a company admin to state that Jim should not have access to Bob's FIDO Credentials for work.
+
+I'm curious to see how this will get resolved. Will the phone become context-aware and should we create a kind of 'guest mode' on the phone, that regardless of the correct passcode being entered, the phone recognises Jim as not-main-user-Bob and prevents access to company FIDO Credentials?
+
+I don't know. Perhaps Bob has a password vault on his phone which unlocks with Touch ID or Face ID or the Passcode, which means that Jim had already access to Bob's work passwords even before any FIDO Credentials implementation.
+
+--
+
+I am curious to see how this will develop, but for the most simplistic use case, I am hopeful if it can replace those pesky passwords.
+
+
+
+
+
+
+
+
+
+ 
+
+
+All Rights Reserved
 
 ![end-picture](https://miro.medium.com/max/4032/1*Qg1nuku84TjLxxkcBbeS7A.png)
 
 
 
+---
 
+(This article is published on medium and unfortunately might be updated there due to limited support for markdown and mermaid syntax.)
 
