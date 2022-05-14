@@ -16,8 +16,6 @@ The following graph demonstrates such a loop and is a simple preview for the res
 graph TD
 
 1.Many_Password_Problem --> 2.Chaos --"Organize"--> 3.Vault --"Passwordless tryout"--> 4.Hardware_Security_Keys --"More contexts require different Keys or<br> the unintended creation of a skeleton key"--> 5.Many_PINs_Problem -. "results again in" .-> 2.Chaos -."Organize again".-> 3.Vault
-
-
 ```
 
 ### Over the years I have witnessed users struggle with:
@@ -30,10 +28,9 @@ graph TD
 - saving their passwords in password managers
 - selecting their passwords
 - realising that for most passwords they should copy and paste their passwords, not type them
-- remembering how to copy and paste 
+- ››remembering how to copy and paste 
 - finishing all this before a time-out expires.
 - keeping PINs from different apps, phones, devices, things-in-general apart.
-
 
 
 ### Now, different coop-mechanism :
@@ -54,9 +51,7 @@ In the diagram below you see 4 different paths of Passwordless.
 
 ```mermaid
 graph TD
-
 subgraph Password_Management_Cycle
-
 Base(Using 1 to 3 main passwords)
 1(Using Password Variations)
 2(Using Excel/Word/Note<br> to keep track of passwords)
@@ -66,36 +61,33 @@ Base(Using 1 to 3 main passwords)
 5b(Using passwordless* option:<br> Authenticator App)
 5c(Using passwordless* option:<br> SQRL Client)
 5d(Using Single Sign On<br> with OS-account)
-
+%% -
 %% Author ref, sorry, not at bottom to get thinner graph.
 style Author fill:#f2f2f2
 Author>Author:<br> Joeri-Juramento]
-
+%% -
 5a-detail(User needs to remember a PIN<br> or set biometric on Key<br> with fall-back PIN.)
 5b-detail(User will need THE password<br> or a 'Temporary Access Pass'<br> to set this up.)
 5c-detail(User needs to remember<br> a master password,<br> biometric isn't permanent<br> replacement of password.)
 5d-detail(User uses Windows Password<br> augmented by Windows Hello)
 5d-detail2(User needs to remember<br> Windows Hello PIN<br> or password)
-
+%% -
 Base --> 1 --> 2 --> 3 --> 4 --> 5a & 5b & 5d & 5c
 5a -.- 5a-detail
 5b -.- 5b-detail
 5c -.- 5c-detail
 5d -.- 5d-detail
 5d-detail -.- 5d-detail2
-
-
 end
-
-
+%% -
 class 2,3,5d OptionalSteps;
 class 5a-detail,5b-detail,5c-detail,5d-detail,5d-detail2 Consequences;
-
+%% -
 classDef OptionalSteps 2 stroke:#333,stroke-width:2px,stroke-dasharray: 5 5;
 classDef Consequences fill:#fff;
 classDef Green fill:lightgreen;
 classDef Red fill:#FF0000,color:#ffffff
-
+%% -
 %%Colours
 style 4 fill:#66CCCC
 style Base fill:#00FFFF
@@ -114,10 +106,8 @@ Let's go down the rabbit hole and find more consequences for the user. In the gr
 
 👉 If you don't like the idea that the key of your home also unlocks your office or vice versa, we arrive at the node '...accommodating more contexts or needs' as is written in the Reality box of Security Keys below. If you want to be Gandalf-wise and not have "*One Ring to Rule them All*" or rather "*One Key&PIN to Rule them all*", then perhaps you need more than one Security Key and thus more than one PIN.🐇🕳
 
-
 ```mermaid
 graph TD
-
 subgraph Password_Management_Cycle
 Base(Using 1 to 3 main passwords)
 1(Using Password Variations)
@@ -128,69 +118,41 @@ Base(Using 1 to 3 main passwords)
 5b(Using passwordless* option:<br> Authenticator App)
 %%5c(Using passwordless* option:<br> SQRL Client)
 5d(Using Single Sign On<br> with OS-account)
-
+%% -
 5a-detail(User needs to remember a PIN<br> or set biometric on Key<br> with fall-back PIN.)
 5b-detail(User will need THE password<br> or a 'Temporary Access Pass'<br> to set this up.)
 %%5c-detail(User needs to remember<br> a master password<br> or set biometric.)
 5d-detail(User uses Windows Password<br> augmented by Windows Hello)
 5d-detail2(User needs to remember<br> Windows Hello PIN<br> or password)
-
+%% -
 Base --> 1 --> 2 --> 3 --> 4 --> 5a & 5b & 5d %% & 5c
 5a -.- 5a-detail
 5b -.- 5b-detail
 %%5c -.- 5c-detail
 5d -.- 5d-detail
 5d-detail -.- 5d-detail2
-
+%% -
 class 2,3,5d OptionalSteps;
 class 5a-detail,5b-detail,5c-detail,5d-detail,5d-detail2 Consequences;
-
+%% -
   subgraph Reality_Key
   ext5a(Using multiple Security Keys<br>accomodating needs/contexts.) -.-
   ext5a_detail(Different Keys require user<br> to remember different PINs):::Consequences
   %%ext5a --> BasePIN
   end
-
+%% -
 	subgraph Reality_App
 	ext5ba(Using multiple accounts inside<br> 1 Authenticator App) -->
   ext5bb(Using multiple phones due to<br> limits of Authenticator App) -.-
   ext5bb_detail(Each Authenticator app requires user<br> to remember device PIN or set biometric.):::Consequences
 	end
-	
+%% -
 	style Author fill:#f2f2f2
 	Author>Author:<br> Joeri-Juramento]
 end
 %% Exiting arrows.
 5a --> ext5a
 5b --> ext5ba
-
-%%subgraph PIN_Management_Cycle
-%%BasePIN(Using 1 to 3 main PINs)
-%%1PIN(Using PIN variations)
-%%4PIN(Using cloudbased Vault<br>to keep track of PINs)
-%%Thought("Are you freaking<br> kidding me?!!")
-%%BasePIN --> 1PIN --> 4PIN -.- Thought
-%%end
-%%ext5a_detail & ext5bb_detail & 5d-detail2 --> BasePIN
-
-%% subgraph Overlap
-%% Repeat([The user experiences<br> are similar to]):::Consequences -.-
-%% Repeat_detail(Problem has been moved,<br> not solved.):::Consequences -.->
-%% Repeat_detail2(User still needs to<br> remember  a secret):::Consequences -.->
-%% Repeat_detail3(Secret should be complex<br> for the benefit of security):::Consequences -.->
-%% Repeat_detail4(Complexity is inherenlty<br> harder to remember.):::Consequences
-%% Repeat_detail4 --> Ref1 & Ref2 
-%%   subgraph Netto_Result[Netto Result - see below]
-%%   Ref1:::Red 
-%%   Ref2:::Green
-%%   end
-%% end
-
-%% 4PIN ==> Repeat ==> 4
-
-
-%%Password_Management_Cycle --> Netto_Result
-
 %% Styling with classes https://mermaid-js.github.io/mermaid/#/flowchart?id=styling-and-classes
 %%style id2 fill:#bbf,stroke:#f66,stroke-width:2px,color:#fff,stroke-dasharray: 5 5
 classDef OptionalSteps 2 stroke:#333,stroke-width:2px,stroke-dasharray: 5 5;
@@ -198,7 +160,6 @@ classDef Consequences fill:#fff;
 classDef Green fill:lightgreen;
 classDef Red fill:#FF0000,color:#ffffff
 %%classDef Guider fill:#fff;
-
 %%style Thought fill:#ffCC00
 style 4 fill:#66CCCC
 %%style 4PIN fill:#66CCCC
@@ -206,7 +167,6 @@ style 4 fill:#66CCCC
 %%style BasePIN fill:#00FFFF
 style 1 fill:#CCFFFF
 %%style 1PIN fill:#CCFFFF
-
 ```
 
 Now you might say: *"I have only one personal account and one work account, why should I need two keys?"* Actually, you don't need the second per se, unless you choose wanting to have a backup. If that is the limit of the complexity you're in luck. As long as you remain in that spot, you don't need to worry.
@@ -237,7 +197,6 @@ We don't have passwords anymore, but now we have PINs! <sarcarsm> Jay! </sarcasm
 
 ```mermaid
 graph TD
-
 subgraph Password_Management_Cycle
 Base(Using 1 to 3 main passwords)
 1(Using Password Variations)
@@ -248,40 +207,40 @@ Base(Using 1 to 3 main passwords)
 5b(Using passwordless* option:<br> Authenticator App)
 %%5c(Using passwordless* option:<br> SQRL Client)
 5d(Using Single Sign On<br> with OS-account)
-
+%%
 5a-detail(User needs to remember a PIN<br> or set biometric on Key<br> with fall-back PIN.)
 5b-detail(User will need THE password<br> or a 'Temporary Access Pass'<br> to set this up.)
 %%5c-detail(User needs to remember<br> a master password<br> or set biometric.)
 5d-detail(User uses Windows Password<br> augmented by Windows Hello)
 5d-detail2(User needs to remember<br> Windows Hello PIN<br> or password)
-
+%%
 Base --> 1 --> 2 --> 3 --> 4 --> 5a & 5b & 5d %% & 5c
 5a -.- 5a-detail
 5b -.- 5b-detail
 %%5c -.- 5c-detail
 5d -.- 5d-detail
 5d-detail -.- 5d-detail2
-
+%%
 class 2,3,5d OptionalSteps;
 class 5a-detail,5b-detail,5c-detail,5d-detail,5d-detail2 Consequences;
-
+%%
   subgraph Reality_Key
   ext5a(Using multiple Security Keys<br>accomodating needs/contexts.) -.-
   ext5a_detail(Different Keys require user<br> to remember different PINs):::Consequences
   %%ext5a --> BasePIN
   end
-
+%%
 	subgraph Reality_App
 	ext5ba(Using multiple accounts inside<br> 1 Authenticator App) -->
   ext5bb(Using multiple phones due to<br> limits of Authenticator App) -.-
   ext5bb_detail(Each Authenticator app requires user<br> to remember device PIN or set biometric.):::Consequences
 	end
 end
-
+%%
 %% Exiting arrows.
 5a --> ext5a
 5b --> ext5ba
-
+%%
 subgraph PIN_Management_Cycle
 BasePIN(Using 1 to 3 main PINs)
 1PIN(Using PIN variations)
@@ -293,7 +252,7 @@ BasePIN --> 1PIN --> 4PIN -.- Thought
   Author>Author:<br> Joeri-Juramento]
 end
 ext5a_detail & ext5bb_detail & 5d-detail2 --> BasePIN
-
+%%
 %% subgraph Overlap
 %% Repeat([The user experiences<br> are similar to]):::Consequences -.-
 %% Repeat_detail(Problem has been moved,<br> not solved.):::Consequences -.->
@@ -306,28 +265,24 @@ ext5a_detail & ext5bb_detail & 5d-detail2 --> BasePIN
 %%   Ref2:::Green
 %%   end
 %% end
-
+%%
 %% 4PIN ==> Repeat ==> 4
-
-
+%%
 %%Password_Management_Cycle --> Netto_Result
-
+%%
 %% Styling with classes https://mermaid-js.github.io/mermaid/#/flowchart?id=styling-and-classes
 %%style id2 fill:#bbf,stroke:#f66,stroke-width:2px,color:#fff,stroke-dasharray: 5 5
 classDef OptionalSteps 2 stroke:#333,stroke-width:2px,stroke-dasharray: 5 5;
 classDef Consequences fill:#fff;
 classDef Green fill:lightgreen;
 classDef Red fill:#FF0000,color:#ffffff
-%%classDef Guider fill:#fff;
 style Thought fill:#ffCC00
-
 style 4 fill:#66CCCC
 style 4PIN fill:#66CCCC
 style Base fill:#00FFFF
 style BasePIN fill:#00FFFF
 style 1 fill:#CCFFFF
 style 1PIN fill:#CCFFFF
-
 ````
 
 After the Passwords grew in numbers, we had to put them into the Vault to deal with them...
@@ -352,7 +307,7 @@ We add the 'Overlap' box on the right side. Please read the nodes and the arrows
 
 ```mermaid
 graph TD
-
+%%
 subgraph Password_Management_Cycle
 Base(Using 1 to 3 main passwords)
 1(Using Password Variations)
@@ -363,29 +318,29 @@ Base(Using 1 to 3 main passwords)
 5b(Using passwordless* option:<br> Authenticator App)
 %%5c(Using passwordless* option:<br> SQRL Client)
 5d(Using Single Sign On<br> with OS-account)
-
+%%
 5a-detail(User needs to remember a PIN<br> or set biometric on Key<br> with fall-back PIN.)
 5b-detail(User will need THE password<br> or a 'Temporary Access Pass'<br> to set this up.)
 %%5c-detail(User needs to remember<br> a master password<br> or set biometric.)
 5d-detail(User uses Windows Password<br> augmented by Windows Hello)
 5d-detail2(User needs to remember<br> Windows Hello PIN<br> or password)
-
+%%
 Base --> 1 --> 2 --> 3 --> 4 --> 5a & 5b & 5d %% & 5c
 5a -.- 5a-detail
 5b -.- 5b-detail
 %%5c -.- 5c-detail
 5d -.- 5d-detail
 5d-detail -.- 5d-detail2
-
+%%
 class 2,3,5d OptionalSteps;
 class 5a-detail,5b-detail,5c-detail,5d-detail,5d-detail2 Consequences;
-
+%%
   subgraph Reality_Key
   ext5a(Using multiple Security Keys<br>accomodating needs/contexts.) -.-
   ext5a_detail(Different Keys require user<br> to remember different PINs):::Consequences
   %%ext5a --> BasePIN
   end
-
+%%
 	subgraph Reality_App
 	ext5ba(Using multiple accounts inside<br> 1 Authenticator App) -->
   ext5bb(Using multiple phones due to<br> limits of Authenticator App) -.-
@@ -395,7 +350,7 @@ end
 %% Exiting arrows.
 5a --> ext5a
 5b --> ext5ba
-
+%%
 subgraph PIN_Management_Cycle
 BasePIN(Using 1 to 3 main PINs)
 1PIN(Using PIN variations)
@@ -404,7 +359,7 @@ Thought("Are you freaking<br> kidding me?!!")
 BasePIN --> 1PIN --> 4PIN -.- Thought
 end
 ext5a_detail & ext5bb_detail & 5d-detail2 --> BasePIN
-
+%%
 subgraph Overlap
 Repeat([The user experiences<br> are similar to]):::Consequences -.-
 Repeat_detail(Problem has been moved,<br> not solved.):::Consequences -.->
@@ -417,21 +372,19 @@ Repeat_detail4 --> Ref1 & Ref2
 	Ref2:::Green
 	end
 end
-
+%%
 4PIN ==> Repeat ==> 4
-
-
+%%
 %%Password_Management_Cycle --> Netto_Result
-
+%%
 %% Styling with classes https://mermaid-js.github.io/mermaid/#/flowchart?id=styling-and-classes
-%%style id2 fill:#bbf,stroke:#f66,stroke-width:2px,color:#fff,stroke-dasharray: 5 5
+%% Example style id2 fill:#bbf,stroke:#f66,stroke-width:2px,color:#fff,stroke-dasharray: 5 5
 classDef OptionalSteps 2 stroke:#333,stroke-width:2px,stroke-dasharray: 5 5;
 classDef Consequences fill:#fff;
 classDef Green fill:lightgreen;
 classDef Red fill:#FF0000,color:#ffffff
-%%classDef Guider fill:#fff;
+%%
 style Thought fill:#ffCC00
-
 style 4 fill:#66CCCC
 style 4PIN fill:#66CCCC
 style Base fill:#00FFFF
@@ -487,7 +440,6 @@ classDef Green fill:lightgreen;
 classDef Red fill:#FF0000,color:#ffffff;
 classDef Orange fill:orange;
 classDef Consequences fill:#fff;
-
 ```
 
 Okay, so from a technical standpoint, the progress is impressive. I've spared you, but the technology under the hood is impressive. If you want your head to hurt, look into FIDO2, CTAP2, U2F and Attestation, also a fun activity. Explain that to a regular user. Also explain why some browser will not offer the Security Key log-in method and why others do. #sigh 
@@ -501,8 +453,6 @@ A interesting take away from my observations:
 Users struggle with typing in long complicated passwords, however PINs are not always easier. It might have a higher chance of success, but regardless, they both get forgotten or confused amongst each other and mistakes happen.
 
 🎯 A workable, scalable alternative to passwords also needs to make progress in the user/interaction realm. Great that it increases security; but it better also increase usability. It also shouldn't be harder to use over time.
-
-
 
 
 ## Circling back to the price (effort)
@@ -526,7 +476,6 @@ The Security Key route, which has different form factors like a Kensington finge
 The experience for the user with a Kensington fingerprint-scanner seems wonderful. Until they need the fall-back PIN, but the number of extreme happy flows seems wonderful before that happens can be impressive. However, when the system gets into a locked state somehow, requiring that fall-back PIN, we can only hope users can access the vault where the PIN is stored via their phone and not on their laptop or desktop.
 
 
-
 ## Wrap up
 
 So these Security Keys with their PINs are not the holy grail in their current implementation form. Amongst other issues, the main problem is just being moved from passwords to PINs. The authentication hardship has moved - read slowly - from a hardship between the user and a website to the user and the Security Key.
@@ -537,11 +486,7 @@ Two topics exist I would like to discuss next time. The Authenticator app and co
 
 Until next time.
 
-
-
 ---
-
-
 
 •••
 
