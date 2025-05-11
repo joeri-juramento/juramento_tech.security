@@ -1,16 +1,18 @@
 # The Pain Towards Passwordless*
 
-Passwords... they have always been a challenge. For the IT professional, as well as your aunt. I've never met anyone who didn't struggle with this. Even experts using the newest technologies can still get themselves in a bind. - This article shows how new technically-impressive solutions still can have suboptimal outcomes for the end-users. 
+Passwords… they have always been a challenge. For the IT professional, as well as your aunt. I’ve never met anyone who didn’t struggle with this. Even experts using the newest technologies can still get themselves in a bind.
+
+This article shows how new technically-impressive solutions still can have suboptimal outcomes for the end-users.
 
 ### Ever experienced issues with passwords?
 
 The following graph demonstrates such a loop and is a simple preview for the rest of the article:
 
-1. Like many users, soon or later you will have too many password to remember.
-1. The chaos will have negative side effects.
-1. Organisation can be achieved in different ways, among them, by use of a Password Vault.
-1. An techy or even Organisation might enforce Passwordless Security Keys for their users.
-1. Different contexts could be loaded on the same key, but that is not without risk. Multiple Keys might be used. Either because newer ones can do a new trick, or because a new contexts is clean to setup on a separate key.
+1. Like many users, soon or later you will have too many passwords to remember.
+2. The chaos will have negative side effects.
+3. Organisation can be achieved in different ways, among them, by use of a Password Vault.
+4. A techy or even Organisation might enforce Passwordless Security Keys for their users.
+5. Different contexts could be loaded on the same key, but that is not without risk. Multiple Keys might be used. Either because newer ones can do a new trick, or because a new contexts is clean to setup on a separate key.
 
 ```mermaid
 graph TD
@@ -19,33 +21,34 @@ graph TD
 ```
 
 ### Over the years I have witnessed users struggle with:
+#### Over the years I have witnessed users struggle with:
 
 - typing their passwords
-  - touching the correct keys 
-  - using capital letters correct
-  - finding that symbol quickly
+   — touching the correct keys 
+     — using capital letters correctly
+     — finding that symbol quickly
 - remembering their passwords
 - saving their passwords in password managers
-- selecting their passwords
+- selecting their passwords from a source to copy
 - realising that for most passwords they should copy and paste their passwords, not type them
-- ››remembering how to copy and paste 
+- remembering how to copy and paste
 - finishing all this before a time-out expires.
 - keeping PINs from different apps, phones, devices, things-in-general apart.
 
+#### Now, different coop-mechanism :
 
-### Now, different coop-mechanism :
+\1. They reuse passwords
+\2. They write down passwords (Excel, Word, Post-its)
+\3. Use dates and other information that is not secret.
+\4. Use of unprotected password managers.
+\5. Use of password vaults.
 
-1. They reuse passwords
-2. They write down passwords (In Excel, Word, Post-its)
-3. Use dates and other information that is not secret.
-3. Use of unprotected password managers.
-4. Use of password vaults.
+### Unpacking the Passwordless Route
 
-## Unpacking the Passwordless Route
+In the diagram below you see four different paths of Passwordless.
 
-In the diagram below you see 4 different paths of Passwordless. 
-
-👉 Takeaway: No current option is truly password-free or rather 'secret-to-remember-free', all of them require some form of secret the user needs to remember. 
+👉 Takeaway: No current option is truly password-free or rather ‘secret-to-remember-free’, all of them require some form of secret the user needs to remember.
+👉 Takeaway: No current option is truly password-free or rather ‘secret-to-remember-free’, all of them require some form of secret the user needs to remember. 
 
 ```mermaid
 graph TD
@@ -174,16 +177,16 @@ These factors will increase your need for extra Security Keys:
 - Wanting a back-up key.
 - Starting an extra job with its own login.
 - Having admin access for different clients.
-- Having admin access for you job but at a separate admin account.
+- Having admin access for your job but at a separate admin account.
 - Starting your own business or side-project.
 - Maintaining your own digital environment thus having a separate admin account for security reasons.
-- New features for newer keys.
+- New features for newer keys, like needing modern certificates.
 - Because you lost one or misplaced one.
-- Feeling discomfort when you type in your Security Key PIN while a co-worker is standing next to you. 
+- Feeling discomfort when you type in your Security Key PIN while a co-worker is standing next to you.
 
-Now besides keys, sometimes you can turn your phone into a key, with the Authenticator app from Microsoft you can register your device with an organisation-tenant and enable passwordless sign-in with your phone. I added the Reality box to this feature as well. It works...
+Now besides keys, sometimes you can turn your phone into a key, with the Authenticator app from Microsoft you can register your device with an organisation-tenant and enable passwordless sign-in with your phone. I added the Reality box to this feature as well. It works…
 
-... except if you want to register more than one account in the app. You can add the device as a second factor for multiple accounts, but to use that app to replace the password, that is limited to one account per phone only. 
+… except if you want to register more than one account in the app. You can add the device as a second factor for multiple accounts, but to use that app to replace the password, that is limited to one account per phone only.
 
 👉 That means you need to have multiple phones if you want to use this feature for more than one account.🐇🕳
 
@@ -450,43 +453,39 @@ A interesting take away from my observations:
 
 Users struggle with typing in long complicated passwords, however PINs are not always easier. It might have a higher chance of success, but regardless, they both get forgotten or confused amongst each other and mistakes happen.
 
-🎯 A workable, scalable alternative to passwords also needs to make progress in the user/interaction realm. Great that it increases security; but it better also increase usability. It also shouldn't be harder to use over time.
+🎯 A workable, scalable alternative to passwords also needs to make progress in the user/interaction realm. Great that it increases security; but it better also increase usability. It also shouldn’t be harder to use over time.
 
-
-## The Effort
+### The Effort
 
 Now Microsoft has launched (their implementation of) passwordless login a while ago.
 
 Here are some counter-intuitive experiences.
 
-- To activate passwordless inside the Authenticator App, you need... a password. (Or a temporary Pass(word)). I am not the first human being seeing the irony of that. At the moment of writing the implementation of Authenticator App by Microsoft is a fancy wrapper around a password which can replace it, but in order to "get there", you need the password.
+- To activate passwordless inside the Authenticator App, you need… a password. (Or a temporary Pass(word)). I am not the first human being seeing the irony of that. At the moment of writing the implementation of Authenticator App by Microsoft is a fancy wrapper around a password which can replace it, but in order to “get there”, you need the password.
 
-Please all count to 10 and exhale...😤
+Please all count to 10 and exhale…😤
 
 - **So the whole onboarding procedure to Passwordless, requires passwords.**
+- And if you change your password, you will break the Authenticator App’s ability to help you sign-in without a password. You’ll need to activate it again.
+- The Security Key’s login capability will not break if you change your password.
 
-- And if you change your password, you will break the Authenticator App's ability to help you sign-in without a password. You'll need to activate it again.
-
-- The Security Key's login capability will not break if you change your password. 
-
-The Security Key route, which has different form factors like a Kensington fingerprint-scanner or a YubiKey, is a semi-replacement of the password, but, in order to onboard or activate it, you need a password. In theory I could send a prepped YubiKey to the user but that would I also need to set the PIN and how do I securely share this PIN with the user? 
+The Security Key route, which has different form factors like a Kensington fingerprint-scanner or a YubiKey, is a semi-replacement of the password, but, in order to onboard or activate it, you need a password. In theory I could send a prepped YubiKey to the user, but than would I also need to set the PIN and how do I securely share this PIN with the user?
 
 👉 The experience for the user with a (Kensington) fingerprint-scanner seems wonderful, until they need the fall-back PIN.
 
-The number of extreme happy usages before fall-back PIN is required, can be extensive. However, when the system gets into a locked state somehow, requiring that fall-back PIN, we can only hope users can access the vault where the PIN is stored if they don't remember it.
+The number of extreme happy usages before fall-back PIN is required, can be extensive. However, when the system gets into a locked state somehow, requiring that fall-back PIN, we can only hope users can access the vault where the PIN is stored if they don’t remember it.
 
 👉 If the fall-back PIN is used rarely, that’s great, because that means that the primary authentication to the device is working; however, it also means the user used the PIN less often and is MORE likely to have forgotten it.
 
+### Wrap up
 
-## Wrap up
-
-So these Security Keys with their PINs are not the holy grail in their current implementation form. Amongst other issues, the main problem is just being moved from passwords to PINs. The authentication hardship has moved - read slowly - from a hardship between the user and a website to the user and the Security Key.
+So these Security Keys (FIDO <2022) with their PINs are not the holy grail in their current implementation form. Amongst other issues, the main problem is just being moved from passwords to PINs. The authentication hardship has moved — read slowly — from a hardship between the user and a website to the user and the Security Key.
 
 The benefits melt away simply by adding reality.
 
-### Future
+#### Future
 
-Two topics exist I would like to discuss in the future. The Authenticator app and comparing same-device auth versus multi-device auth and my observations with end-users. 
+Two topics exist I would like to discuss in the future. The Authenticator app and comparing same-device auth versus multi-device auth and my observations with end-users.
 
 The current options seem technology-driven and we should probably take our hats off to its authors, but I want more! I want us to find that bliss point between technology, security and human user-friendly interaction.
 
@@ -500,8 +499,6 @@ Joeri • Juramento
 
 # Update
 
-### FIDO Credentials for Passwordless (May 2022)
-
 ‘Passkeys’ as alternatives to traditional passwords.
 
 Continued from previous article “[The Pain Towards Passwordless](https://medium.com/@joeri.juramento/the-pain-towards-password-less-84aa8b8c809)”.
@@ -510,9 +507,9 @@ Continued from previous article “[The Pain Towards Passwordless](https://mediu
 
 Seems that the FIDO alliance is shifting their focus from the hardware-based Security Keys to a different strategy some call ‘Passkeys’ — an alias for FIDO Credentials — in favour of better (expected) user adoption. It effectively turns a smartphone (or your laptop) into a Security Key, with extra cloud synchronisation and backup options.
 
-This future phone with FIDO credentials can authenticate to all kinds of accounts. So you would log into your webshop.example with help of your phone, in stead of a password. You would authenticate yourself to your phone and the phone would authenticate you to the website.
+This future phone with FIDO credentials can authenticate (you) to all kinds of accounts. So you would log into your webshop.example with help of your phone, in stead of a password. You would authenticate yourself to your phone and the phone would authenticate you to the website.
 
-Now let’s map the problem with Security Keys and their PINs to this new design see what is resolved and what isn’t.
+Now let’s map the problems with Security Keys we discussed in the previous article to this new design see what is resolved and what isn’t.
 
 #### 1. The Security Key’s (Fall-back) PIN
 
@@ -542,7 +539,7 @@ Microsoft’s own Authenticator App passwordless implementation is experienced d
 
 Against expectations, I’ve witnessed users to have more problem with using the technology on the same device.
 
-👉 When a user gets a notification on the phone while logging into his account on his computer. The notification set’s the user up almost perfectly for a normal walk though. 
+👉 When a user gets a notification on the phone while logging into his account on his computer. The notification set’s the user up almost perfectly for a normal walk though.
 
 However, when this notification comes by when a user logs in to an app on their phone or iOS’ native Contact app, I’ve seen the following struggles:
 
@@ -604,17 +601,15 @@ I have spoken with users that know each other’s phone’s passcode. I also spo
 
 Regardless, if this phone will protect other accounts, platform makers might offer to protect Passcodes with an additional — here we go again — PIN which the main user needs to remember again.
 
---
-
 Imagine a phone with 25 FIDO Credentials of main user Bob. 5 Credentials are for work, 20 credentials are for personal resources.
 
 Bob’s partner is Jim. If Jim knows Bob’s phone’s passcode, he has access to Bob’s work’s resources. He would need Bob’s phone and the passcode, but I can see a company admin not being happy about this on principle.
 
-There are valid reasons for Bob and Jim to open each other’s phone, but there are also valid reasons for a company admin to state that Jim should not have access to Bob’s FIDO Credentials for work. 
+There are valid reasons for Bob and Jim to open each other’s phone, but there are also valid reasons for a company admin to state that Jim should not have access to Bob’s FIDO Credentials for work.
 
 I’m curious to see how this will get resolved. Will the phone become context-aware and should we create a kind of ‘guest mode’ on the phone, that regardless of the correct passcode being entered, the phone recognises Jim as not-main-user-Bob and prevents access to company FIDO Credentials?
 
-I am unsure. Perhaps Bob has a password vault on his phone which unlocks with Touch ID or Face ID or the phone’s passcode, which means that Jim had already access to Bob’s work passwords even before any FIDO Credentials implementation. Does that really negate the Company’s admin's concerns?
+I am unsure. Perhaps Bob has a password vault on his phone which unlocks with Touch ID or Face ID or the phone’s passcode, which means that Jim had already access to Bob’s work passwords even before any FIDO Credentials implementation. Does that really negate the Company’s admin’s concerns?
 
 --
 
